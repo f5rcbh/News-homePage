@@ -1,14 +1,14 @@
 ---
+import "../layouts/style.scss";
 import Layout from "../layouts/Layout.astro";
 import Game from "../images/image-web-3-desktop.jpg";
 import PC from "../images/image-retro-pcs.jpg";
 import Laptop from "../images/image-top-laptops.jpg";
 import Controller from "../images/image-gaming-growth.jpg";
-import Styles from "./styles.module.scss";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+	<main class="mainGrid">
 		<nav>
 			<svg width="65" height="40" xmlns="http://www.w3.org/2000/svg"
 				><path
@@ -23,147 +23,70 @@ import Styles from "./styles.module.scss";
 				<li><a href="">Categories</a></li>
 			</ul>
 		</nav>
-	</main>
-	<main class="mainGrid">
-		<section class="midSection">
-			<img src={Game} alt="" width="100%" />
+		<div class="title">
+			<section class="midSection">
+				<img src={Game} alt="" width="100%" />
 
-			<div class="midTitle">
-				<h1>The Bright Future of Web 3.0</h1>
-				<p>
-					We dive into the next evolution of the web that claims to
-					put the power of the platforms back into the hands of the
-					people. But is it really fulfilling its promise?
-					<br />
-					<button>READ MORE</button>
-				</p>
-			</div>
-		</section>
-		<section class="rightSection">
-			<div>
-				<h2>New</h2>
-				<h4>Hydrogen VS Electric Cars</h4>
-				<p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-			</div>
-			<div>
-				<h4>The Downsides of AI Artistry</h4>
-				<p>
-					What are the possible adverse effects of on-demand AI image
-					generation?
-				</p>
-			</div>
-			<div>
-				<h4>Is VC Funding Drying Up?</h4>
-				<p>
-					Private funding by VC firms is down 50% YOY. We take a look
-					at what that means.
-				</p>
-			</div>
-		</section>
-
-		<section class="bottomSection">
-			<div class="1">
-				<img src={PC} alt="" />
-				<div>
-					<h2>01</h2>
-					<h3>Reviving Retro PCs</h3>
-					<p>What happens when old PCs are given modern upgrades?</p>
+				<div class="midTitle">
+					<h1>The Bright Future of Web 3.0</h1>
+					<p>
+						We dive into the next evolution of the web that claims
+						to put the power of the platforms back into the hands of
+						the people. But is it really fulfilling its promise?
+						<br />
+						<button>READ MORE</button>
+					</p>
 				</div>
-			</div>
-			<div class="2">
-				<img src={Laptop} alt="" />
-				<div>
-					<h2>02</h2>
-					<h3>Top 10 Laptops of 2022</h3>
-					<p>Our best picks for various needs and budgets.</p>
+			</section>
+			<section class="rightSection">
+				<div class="first">
+					<h1>New</h1>
+					<h2>Hydrogen VS Electric Cars</h2>
+					<p>Will hydrogen-fueled cars ever catch up to EVs?</p>
 				</div>
-			</div>
-		</section>
-		<section class="bottomSection">
-			<div class="3">
-				<img src={Controller} alt="" />
-				<div>
-					<h2>03</h2>
-					<h3>The Growth of Gaming</h3>
-					<p>How the pandemic has sparked fresh opportunities.</p>
+				<div class="second">
+					<h2>The Downsides of AI Artistry</h2>
+					<p>
+						What are the possible adverse effects of on-demand AI
+						image generation?
+					</p>
 				</div>
-			</div>
-		</section>
+				<div class="third">
+					<h2>Is VC Funding Drying Up?</h2>
+					<p>
+						Private funding by VC firms is down 50% YOY. We take a
+						look at what that means.
+					</p>
+				</div>
+			</section>
+			<section class="bottomSection">
+				<div class="one">
+					<img src={PC} alt="" />
+					<div>
+						<h1>01</h1>
+						<h3>Reviving Retro PCs</h3>
+						<p>
+							What happens when old PCs are given modern upgrades?
+						</p>
+					</div>
+				</div>
+				<div class="two">
+					<img src={Laptop} alt="" />
+					<div>
+						<h1>02</h1>
+						<h3>Top 10 Laptops of 2022</h3>
+						<p>Our best picks for various needs and budgets.</p>
+					</div>
+				</div>
+				<div class="three">
+					<img src={Controller} alt="" />
+					<div>
+						<h1>03</h1>
+						<h3>The Growth of Gaming</h3>
+						<p>How the pandemic has sparked fresh opportunities.</p>
+					</div>
+				</div>
+			</section>
+		</div>
 	</main>
 </Layout>
-
-<style lang="sass">
-	:root
-		--softOrange: hsl(35, 77%, 62%)
-		--softRed: hsl(5, 85%, 63%)
-		--offWhite: hsl(36, 100%, 99%)
-		--grayBlue: hsl(233, 8%, 79%)
-		--darkBlue: hsl(236, 13%, 42%)
-		--veryBlue: hsl(240, 100%, 5%)
-		--size: 15px
-		--family: "Libre Franklin", sans-serif
-
-	*,
-	*::after,
-	*::before
-		margin: 0
-		padding: 0
-		box-sizing: border-box
-
-	main
-		margin: auto
-		padding: 1.5rem
-		max-width: 80%
-
-		h1
-			font-size: 4rem
-			line-height: 4rem
-			font-weight: 800
-			margin: 0
-
-			svg
-				float: left
-
-		ul
-			display: flex
-			justify-content: space-between
-			list-style: none
-			float: right
-			li
-				padding-inline: 5rem 0
-			a
-				text-decoration: none
-				color: inherit
-	.mainGrid
-		display: grid
-		grid-template-columns: 1fr .5fr
-		column-gap: 2rem
-		row-gap: 2rem
-		.midSection
-			.midTitle
-				display: grid
-				grid-template-columns: 1fr 1fr
-				margin-top: 1rem
-				p
-					font-size: 16.5px
-					line-height: 2rem
-					button
-						background: var(--softRed)
-						outline: none
-						border: none
-						color: var(--offWhite)
-						padding: 1rem
-						margin: 1rem 0 0
-						width: 11rem
-						font-family: var(--family)
-						font-weight: 700
-						letter-spacing: 4px
-		.rightSection
-			margin-left: auto
-			background-color: var(--veryBlue)
-			color: var(--offWhite)
-		.bottomSection
-
-			display: grid
-			grid-template-columns: repeat(2,1fr)
-</style>

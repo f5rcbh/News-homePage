@@ -1,0 +1,173 @@
+
+
+*,
+*::after,
+*::before{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+$softOrange: hsl(35, 77%, 62%);
+$softRed: hsl(5, 85%, 63%);
+$offWhite: hsl(36, 100%, 99%);
+$grayBlue: hsl(233, 8%, 79%);
+$darkBlue: hsl(236, 13%, 42%);
+$veryBlue: hsl(240, 100%, 5%);
+$size  : 15px;
+$family: "Libre Franklin", sans-serif;
+
+
+body{
+
+
+        margin: auto;
+        
+        max-width: 80%;
+
+    nav{
+           
+            padding: 2rem 0;
+            
+        svg{
+
+                float: left
+            }
+
+        ul{
+
+                display: flex;
+                justify-content: space-between;
+                list-style: none;
+                float: right;
+            li{
+
+                    padding-inline: 5rem 0
+                }
+            a{
+
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+            // margin: auto
+    .mainGrid{
+        border: solid;
+        display: grid;
+        // grid-template-columns: 1fr .5fr;
+        .title{
+            display: grid;
+            grid-template-columns: 1fr .5fr;
+            grid-gap: 2rem;
+            column-gap: 2rem;
+            .midSection{
+    
+                display: grid;
+    
+                .midTitle {
+    
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 1rem;
+                    h1{
+        
+                        font-size: 5rem;
+                        line-height: 4rem;
+                        font-weight: 800;
+                        margin: 0;
+                    }
+                    p{
+        
+                        font-size: 16.5px;
+                        line-height: 2rem;
+                        display: grid;
+                        
+                    }
+                }
+                button{
+    
+                    background: $softRed;
+                    outline: none;
+                    border: none;
+                    color:$offWhite;
+                    height: 3.5rem;
+                    width: 11rem;
+                    margin-top: auto;
+                    font-family: $family;
+                    font-weight: 700;
+                    letter-spacing: 4px;
+                }
+                }
+            }
+            .rightSection{
+    
+                padding-inline: 2rem;
+                background-color: $veryBlue;
+                color: $offWhite;
+                .first , .second , .third{
+    
+                    box-shadow: 0 1px 0 $darkBlue;
+                    padding: 3rem 0;
+                    h1{
+    
+                        color: $softOrange;
+                        font-weight: 600
+                    }
+                    h2{
+    
+                        font-size: 30px;
+                        margin: 1rem 0
+                    }
+                    p{
+    
+                        color: $grayBlue;
+                        font-size: 20px;
+                        line-height: 2rem;
+                        font-weight: 300
+                    }
+                }
+                .third{
+    
+                    box-shadow: unset
+                }
+            }
+    
+            
+        }
+        .bottomSection{
+    
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 1rem;
+            margin: 3rem 0;
+            .one , .two , .three {
+                img{
+                    
+                    width: 30%
+                }
+    
+                display: flex;
+                align-items: center;
+                div{
+        
+                    display: grid;
+                    grid-template-rows: 1fr 1fr 1fr;
+                    padding: 0 2rem;
+        
+                    h1{
+        
+                        font-size: 5rem;
+                        line-height: 4rem;
+                        font-weight: 800;
+                        margin: 0;
+                        color: $grayBlue;
+                        font-weight: 600
+                    }
+                }
+            }
+           
+        }
+    }
+
+

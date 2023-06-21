@@ -11,7 +11,7 @@ import MobileGame from "../images/image-web-3-mobile.jpg";
 <Layout title="News HomePage">
 	<main class="mainGrid">
 		<nav>
-			<ul>
+			<div class="nav">
 				<svg
 					class="logo"
 					width="65"
@@ -44,76 +44,106 @@ import MobileGame from "../images/image-web-3-mobile.jpg";
 						></path><path d="M0 0h40v3H0z"></path></g
 					></svg
 				>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">New</a></li>
-				<li><a href="#">Popular</a></li>
-				<li><a href="#">Trending</a></li>
-				<li><a href="#">Categories</a></li>
-			</ul>
-		</nav>
-		<div class="title">
-			<section class="midSection">
-				<img src={MobileGame} alt="" class="mobileGame" />
-				<img src={Game} alt="" class="desktopGame" />
+				<div class="lists">
+					<p>Home</p>
+					<p>New</p>
+					<p>Popular</p>
+					<p>Trending</p>
+					<p>Categories</p>
+				</div>
+			</div>
+			<div class="title">
+				<section class="midSection">
+					<img src={MobileGame} alt="" class="mobileGame" />
+					<img src={Game} alt="" class="desktopGame" />
 
-				<div class="midTitle">
-					<h1>The Bright Future of Web 3.0</h1>
-					<p>
-						We dive into the next evolution of the web that claims
-						to put the power of the platforms back into the hands of
-						the people. But is it really fulfilling its promise?
-						<br />
-						<button>READ MORE</button>
-					</p>
+					<div class="midTitle">
+						<h1>The Bright Future of Web 3.0</h1>
+						<p>
+							We dive into the next evolution of the web that
+							claims to put the power of the platforms back into
+							the hands of the people. But is it really fulfilling
+							its promise?
+							<br />
+							<button>READ MORE</button>
+						</p>
+					</div>
+				</section>
+				<section class="rightSection">
+					<div class="first">
+						<h1>New</h1>
+						<h2>Hydrogen VS Electric Cars</h2>
+						<p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+					</div>
+					<div class="second">
+						<h2>The Downsides of AI Artistry</h2>
+						<p>
+							What are the possible adverse effects of on-demand
+							AI image generation?
+						</p>
+					</div>
+					<div class="third">
+						<h2>Is VC Funding Drying Up?</h2>
+						<p>
+							Private funding by VC firms is down 50% YOY. We take
+							a look at what that means.
+						</p>
+					</div>
+				</section>
+			</div>
+			<section class="bottomSection">
+				<div class="one">
+					<img src={PC} alt="" />
+					<div>
+						<h1>01</h1>
+						<h3>Reviving Retro PCs</h3>
+						<p>
+							What happens when old PCs are given modern upgrades?
+						</p>
+					</div>
+				</div>
+				<div class="two">
+					<img src={Laptop} alt="" />
+					<div>
+						<h1>02</h1>
+						<h3>Top 10 Laptops of 2022</h3>
+						<p>Our best picks for various needs and budgets.</p>
+					</div>
+				</div>
+				<div class="three">
+					<img src={Controller} alt="" />
+					<div>
+						<h1>03</h1>
+						<h3>The Growth of Gaming</h3>
+						<p>How the pandemic has sparked fresh opportunities.</p>
+					</div>
 				</div>
 			</section>
-			<section class="rightSection">
-				<div class="first">
-					<h1>New</h1>
-					<h2>Hydrogen VS Electric Cars</h2>
-					<p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-				</div>
-				<div class="second">
-					<h2>The Downsides of AI Artistry</h2>
-					<p>
-						What are the possible adverse effects of on-demand AI
-						image generation?
-					</p>
-				</div>
-				<div class="third">
-					<h2>Is VC Funding Drying Up?</h2>
-					<p>
-						Private funding by VC firms is down 50% YOY. We take a
-						look at what that means.
-					</p>
-				</div>
-			</section>
-		</div>
-		<section class="bottomSection">
-			<div class="one">
-				<img src={PC} alt="" />
-				<div>
-					<h1>01</h1>
-					<h3>Reviving Retro PCs</h3>
-					<p>What happens when old PCs are given modern upgrades?</p>
-				</div>
-			</div>
-			<div class="two">
-				<img src={Laptop} alt="" />
-				<div>
-					<h1>02</h1>
-					<h3>Top 10 Laptops of 2022</h3>
-					<p>Our best picks for various needs and budgets.</p>
-				</div>
-			</div>
-			<div class="three">
-				<img src={Controller} alt="" />
-				<div>
-					<h1>03</h1>
-					<h3>The Growth of Gaming</h3>
-					<p>How the pandemic has sparked fresh opportunities.</p>
-				</div>
-			</div>
-		</section>
+		</nav>
 	</main>
 </Layout>
+
+<script>
+	const ham = document.querySelector(".ham");
+	const X = document.querySelector(".X");
+	const div = document.querySelectorAll(".lists");
+	const dark = document.querySelector("html");
+	console.log(div);
+	ham.addEventListener("click", () => {
+		ham.setAttribute("id", "hidden");
+		X.setAttribute("id", "visable");
+		div.forEach((e) => {
+			e.setAttribute("id", "lists");
+		});
+
+		dark.style.background = "hsl(233, 8%, 79%)";
+		X.addEventListener("click", () => {
+			X.setAttribute("id", "hidden");
+			ham.setAttribute("id", "visable");
+			div.forEach((e) => {
+				e.setAttribute("id", "hidden");
+			});
+			dark.style.background = "hsl(36, 100%, 99%)";
+		});
+	});
+</script>

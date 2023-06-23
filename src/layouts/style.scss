@@ -17,7 +17,7 @@ $veryBlue: hsl(240, 100%, 5%);
 $size  : 15px;
 $family: "Libre Franklin", sans-serif;
 
-html{   
+body{   
     
     
     
@@ -304,8 +304,7 @@ html{
                 @include break.breakpoint(small){
 
                     display: block;
-                    position: fixed;
-                    transform: translateX(10rem);
+                    
                     
                 }
          

@@ -123,4 +123,26 @@ import MobileGame from "../images/image-web-3-mobile.jpg";
 	</main>
 </Layout>
 
+<script>
+	const ham = document.querySelector(".ham");
+	const X = document.querySelector(".X");
+	const div = document.querySelectorAll(".lists");
+	const dark = document.querySelector("body");
+	ham.addEventListener("click", () => {
+		ham.setAttribute("id", "hidden");
+		X.setAttribute("id", "visable");
+		div.forEach((e) => {
+			e.setAttribute("id", "lists");
+		});
 
+		dark.style.background = "hsl(233, 8%, 79%)";
+		X.addEventListener("click", () => {
+			X.setAttribute("id", "hidden");
+			ham.setAttribute("id", "visable");
+			div.forEach((e) => {
+				e.setAttribute("id", "hidden");
+			});
+			dark.style.background = "hsl(36, 100%, 99%)";
+		});
+	});
+</script>
